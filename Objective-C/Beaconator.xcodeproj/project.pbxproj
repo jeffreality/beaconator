@@ -20,7 +20,6 @@
 		000AED5018AE9C1E009B1D93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000AED3218AE9C1E009B1D93 /* UIKit.framework */; };
 		000AED6518AEBD17009B1D93 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000AED6318AEBD17009B1D93 /* CoreBluetooth.framework */; };
 		000AED6618AEBD17009B1D93 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000AED6418AEBD17009B1D93 /* CoreLocation.framework */; };
-		0010771B18BEB60A00FB8E5A /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0010771A18BEB60A00FB8E5A /* libFlurry_4.3.2.a */; };
 		0010771D18BEB6BE00FB8E5A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0010771C18BEB6BE00FB8E5A /* SystemConfiguration.framework */; };
 		0010771F18BEB6C200FB8E5A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0010771E18BEB6C200FB8E5A /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -53,8 +52,6 @@
 		000AED4C18AE9C1E009B1D93 /* BeaconatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000AED6318AEBD17009B1D93 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		000AED6418AEBD17009B1D93 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0010771918BEB60A00FB8E5A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		0010771A18BEB60A00FB8E5A /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.2.a; sourceTree = "<group>"; };
 		0010771C18BEB6BE00FB8E5A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0010771E18BEB6C200FB8E5A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -71,7 +68,6 @@
 				000AED3118AE9C1E009B1D93 /* CoreGraphics.framework in Frameworks */,
 				000AED3318AE9C1E009B1D93 /* UIKit.framework in Frameworks */,
 				000AED2F18AE9C1E009B1D93 /* Foundation.framework in Frameworks */,
-				0010771B18BEB60A00FB8E5A /* libFlurry_4.3.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +124,6 @@
 				000AED4318AE9C1E009B1D93 /* BNViewController.h */,
 				000AED4418AE9C1E009B1D93 /* BNViewController.m */,
 				000AED4618AE9C1E009B1D93 /* Images.xcassets */,
-				0010771818BEB60A00FB8E5A /* Libraries */,
 				000AED3518AE9C1E009B1D93 /* Supporting Files */,
 			);
 			path = Beaconator;
@@ -144,15 +139,6 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		0010771818BEB60A00FB8E5A /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				0010771918BEB60A00FB8E5A /* Flurry.h */,
-				0010771A18BEB60A00FB8E5A /* libFlurry_4.3.2.a */,
-			);
-			path = Libraries;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -204,6 +190,7 @@
 				TargetAttributes = {
 					000AED2A18AE9C1E009B1D93 = {
 						DevelopmentTeam = T4VXPLC8GZ;
+						ProvisioningStyle = Automatic;
 					};
 					000AED4B18AE9C1E009B1D93 = {
 						TestTargetID = 000AED2A18AE9C1E009B1D93;
@@ -215,6 +202,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -374,18 +362,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4VXPLC8GZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beaconator/Beaconator-Prefix.pch";
 				INFOPLIST_FILE = "Beaconator/Beaconator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jeffrey/Documents/_dev/Beaconator/Libraries,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pushplay.Beaconator2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -396,18 +387,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4VXPLC8GZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beaconator/Beaconator-Prefix.pch";
 				INFOPLIST_FILE = "Beaconator/Beaconator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jeffrey/Documents/_dev/Beaconator/Libraries,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pushplay.Beaconator2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

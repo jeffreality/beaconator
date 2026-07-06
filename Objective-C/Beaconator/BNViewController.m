@@ -7,7 +7,6 @@
 //
 
 #import "BNViewController.h"
-#import "Flurry.h"
 
 @interface BNViewController ()
 
@@ -85,7 +84,6 @@
 - (IBAction) startBroadcast {
     
     if (!isBroadcasting) {
-        [Flurry logEvent:@"Broadcasting NOW"];
         
         isBroadcasting = YES;
         
@@ -105,7 +103,6 @@
     } else {
         
         isBroadcasting = NO;
-        [Flurry logEvent:@"Broadcasting Stopped"];
         
         self.peripheralManager = nil;
         self.beaconData = nil;

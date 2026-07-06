@@ -7,17 +7,11 @@
 //
 
 #import "BNAppDelegate.h"
-#import "Flurry.h"
 
 @implementation BNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
-    [Flurry setCrashReportingEnabled:YES];
-    [Flurry startSession:@"77GBRRM85ZPR39ZCQKCD"];
-    
     return YES;
 }
 							
