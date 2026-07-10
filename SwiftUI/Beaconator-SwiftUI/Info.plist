@@ -2,21 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>bluetooth-central</string>
-		<string>bluetooth-peripheral</string>
-		<string>location</string>
-	</array>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>This app needs access to Bluetooth to broadcast and detect beacons.</string>
+    <string>Beaconator needs access to Bluetooth to broadcast and detect beacons.</string>
     <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>This app needs to act as a Bluetooth peripheral to broadcast beacon signals.</string>
+    <string>Beaconator needs to act as a Bluetooth peripheral to broadcast beacon signals.</string>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app needs access to your location to broadcast beacons and detect nearby devices.</string>
+    <string>Beaconator uses location permissions to detect nearby iBeacons while the app is open.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Beaconator uses the camera to scan a QR code containing a beacon UUID from another device.</string>
     <key>NSLocationAlwaysUsageDescription</key>
-    <string>This app needs access to your location to broadcast beacons and detect nearby devices even in the background.</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>This app needs access to your location to broadcast beacons and detect nearby devices even in the background.</string>
+    <string>Beaconator needs access to your location to broadcast beacons and detect nearby devices even in the background.</string>
 </dict>
 </plist>
