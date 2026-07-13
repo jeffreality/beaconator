@@ -3,7 +3,7 @@
 //  Beaconator-SwiftUI
 //
 //  Created by Jeffrey Berthiaume on 5/24/24.
-//  Updated with broadcast, detection, and QR transfer guidance.
+//  https://github.com/jeffreality/beaconator
 //
 
 import SwiftUI
